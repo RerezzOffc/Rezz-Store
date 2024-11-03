@@ -6,16 +6,6 @@ function openPopup(id) {
         document.getElementById(id).style.display = 'none';
     }
 
-    function orderProductwa(productName) {
-        // Logic for WhatsApp order
-        alert('Order via WhatsApp for ' + productName);
-    }
-
-    function orderProducttl(productName) {
-        // Logic for Telegram order
-        alert('Order via Telegram for ' + productName);
-    }
-
     function searchProducts() {
         const input = document.getElementById('searchlmput');
         const filter = input.value.toLowerCase();
@@ -50,3 +40,17 @@ function openPopup(id) {
             }
         });
     });
+function orderProducttl(productName) {
+    // Ganti dengan URL bot Telegram Anda
+    const telegramBotUrl = "https://t.me/rerez_x_hosting?text=" + encodeURIComponent(productName);
+    window.open(telegramBotUrl, "_blank"); // Membuka link di tab baru
+}
+
+function orderProductwa(productName) {
+    // Ganti dengan nomor WhatsApp Anda
+    const phoneNumber = "6285216955233"; // Nomor WhatsApp tanpa tanda +
+    const message = `Saya ingin memesan: ${productName}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank"); // Membuka link di tab baru
+}
+
